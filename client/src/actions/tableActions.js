@@ -1,7 +1,9 @@
+
+
 const tableActions = (id, number, seats, action) => {
     switch(action){
         case 'SELECTED_TABLE':
-            console.log("aa");
+
 
         case 'ALL_TABLES':
             console.log("bb");
