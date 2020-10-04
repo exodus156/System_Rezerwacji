@@ -1,17 +1,18 @@
+import { getTable, getTables, addTable, removeTable } from '../functions/tableFunctions'
 
-
-const tableActions = (id, number, seats, action) => {
+export const tableActions = (id, number, seats, action) => {
     switch(action){
         case 'SELECTED_TABLE':
-
+            return getTable(id);
 
         case 'ALL_TABLES':
-            console.log("bb");
+            return getTables();            
 
         case 'ADD_TABLE':
-            console.log("cc");
+            const reserved = false;
+            return addTable(number, seats, reserved);
 
         case 'REMOVE_TABLE':
-            console.log("dd");
+            return removeTable(id);
     }
 }

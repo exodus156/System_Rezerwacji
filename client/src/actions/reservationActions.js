@@ -1,15 +1,17 @@
-const reservationActions = (id, number, date, timeStart, timeEnd, people, tableID, action) => {
+import { getReservation, getReservations, addReservation, removeReservation } from '../functions/reservationFunctions'
+
+export const reservationActions = (id, number, date, timeStart, timeEnd, people, tableID, action) => {
     switch(action){
         case 'SELECTED_RESERVATION':
-            console.log("aa");
+            return getReservation(id);
 
         case 'ALL_RESERVATION':
-            console.log("bb");
+            return getReservations();
 
         case 'ADD_RESERVATION':
-            console.log("cc");
+            return addReservation(number, date, timeStart, timeEnd, people, tableID);
 
         case 'REMOVE_RESERVATION':
-            console.log("dd");
+            return removeReservation(id);
     }
 }

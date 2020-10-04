@@ -30,8 +30,7 @@ export const getTablesQuery = gql`
 export const addTableMutation = gql`
     mutation addTable($number: Int!, $seats: Int!, $reserved: Boolean!){
         addTable(number: $number, seats: $seats, reserved: $reserved){
-            number
-            seats
+            id
         }
     }
 `
@@ -74,5 +73,17 @@ export const getReservationsQuery = gql`
 `
 
 export const addReservationMutation = gql`
-    mutation addReservation()
+    mutation addReservation($number: Int!, $date: String!, $timeStart: Int!, $timeEnd: Int!, $people: Int!, $tableid: String!){
+        addReservation(number: $number, date: $date, timeStart: $timeStart, timeEnd: $timeEnd, people: $people, tableId: $tableid){
+            id
+        }
+    }
+`
+
+export const removeReservationMutation = gql`
+    mutation removeReservation($id: String!){
+        removeReservation(id: $id){
+            id
+        }
+    }
 `
