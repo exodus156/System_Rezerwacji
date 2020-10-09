@@ -1,7 +1,4 @@
-import { useQuery, useMutation } from '@apollo/react-hooks';
-import { getTableQuery, getTablesQuery, addTableMutation, removeTableMutation } from '../queries';
-
-export const getTable = (id) => {
+const getTable = (id) => {
     const { loading, error, data } = useQuery(getTableQuery, {
         variables: {
             id
@@ -14,7 +11,7 @@ export const getTable = (id) => {
     return data
 }
 
-export const getTables = () => {
+const getTables = () => {
     const { loading, error, data } = useQuery(getTablesQuery);
     if(loading) console.log("loading getTables");
     if(error) console.log("error getTables");
@@ -22,18 +19,28 @@ export const getTables = () => {
     return data
 }
 
-export const addTable = (number, seats, reserved) => {
-    const [addTableMut, { data }] = useMutation(addTableMutation);
-    return addTableMut({ variables: {
-        number,
-        seats,
-        reserved
-    }});
-}
 
-export const removeTable = (id) => {
+
+const removeTable = (id) => {
     const [removeTableMut, { data }] = useMutation(removeTableMutation);
     return removeTableMut({variables: {
         id
     }})
+}
+
+const tableActions = (id, number, seats, action) => {
+    switch(action){
+        case 'SELECTED_TABLE':
+            return getTable(id);
+
+        case 'ALL_TABLES':
+            return getTables();            
+
+        case 'ADD_TABLE':
+            const reserved = false;
+            return addTable(number, seats, reserved);
+
+        case 'REMOVE_TABLE':
+            return removeTable(id);
+    }
 }

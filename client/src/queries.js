@@ -2,7 +2,7 @@ import { gql } from 'apollo-boost';
 
 /* Zapytania i mutacje dla stolików */
 export const getTableQuery = gql`
-    query getTable($id: String!){
+    query GetTable($id: String!){
         table(id: $id){
             number
             seats
@@ -18,7 +18,7 @@ export const getTableQuery = gql`
 `
 
 export const getTablesQuery = gql`
-    query getTables {
+    query GetTables {
         tables{
             id
             number
@@ -28,7 +28,7 @@ export const getTablesQuery = gql`
 `
 
 export const addTableMutation = gql`
-    mutation addTable($number: Int!, $seats: Int!, $reserved: Boolean!){
+    mutation AddTable($number: Int!, $seats: Int!, $reserved: Boolean!){
         addTable(number: $number, seats: $seats, reserved: $reserved){
             id
         }
@@ -36,7 +36,7 @@ export const addTableMutation = gql`
 `
 
 export const removeTableMutation = gql`
-    mutation removeTable($id: String!){
+    mutation RemoveTable($id: String!){
         removeTable(id: $id){
             id
         }
@@ -45,7 +45,7 @@ export const removeTableMutation = gql`
 
 /* Zapytania i mutacje dla rezerwacji */
 export const getReservationQuery = gql`
-    query getReservation($id: String!){
+    query GetReservation($id: String!){
         reservation(id: $id){
             number
             date
@@ -61,7 +61,7 @@ export const getReservationQuery = gql`
 `
 
 export const getReservationsQuery = gql`
-    query getReservations {
+    query GetReservations {
         reservations{
             id
             number
@@ -73,7 +73,7 @@ export const getReservationsQuery = gql`
 `
 
 export const addReservationMutation = gql`
-    mutation addReservation($number: Int!, $date: String!, $timeStart: Int!, $timeEnd: Int!, $people: Int!, $tableid: String!){
+    mutation AddReservation($number: Int!, $date: String!, $timeStart: Int!, $timeEnd: Int!, $people: Int!, $tableid: String!){
         addReservation(number: $number, date: $date, timeStart: $timeStart, timeEnd: $timeEnd, people: $people, tableId: $tableid){
             id
         }
@@ -81,7 +81,7 @@ export const addReservationMutation = gql`
 `
 
 export const removeReservationMutation = gql`
-    mutation removeReservation($id: String!){
+    mutation RemoveReservation($id: String!){
         removeReservation(id: $id){
             id
         }

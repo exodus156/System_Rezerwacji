@@ -6,7 +6,7 @@ const schema = require('./schema/schema');
 
 const app = express();
 
-//app.use(cors); //Enable cross-section connection
+app.use(cors()); //Enable cross-section connection
 
 /* Mongoose connection to database start */
 mongoose.connect('mongodb+srv://admin:admin1234@nodeapp.gbe85.mongodb.net/NodeApp?retryWrites=true&w=majority', { 
