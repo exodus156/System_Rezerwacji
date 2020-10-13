@@ -68,6 +68,9 @@ export const getReservationsQuery = gql`
             date
             timeStart
             timeEnd
+            table{
+                id
+            }
         }
     }
 `

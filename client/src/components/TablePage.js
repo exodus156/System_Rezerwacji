@@ -26,12 +26,12 @@ const AddTable = () => {
         <section className="wrapper">
             <form onSubmit={submitTable}>
                 <div className="inputField">
-                    <label htmlFor="nrStolika">Numer stolika:</label>
-                    <input type="number" id="nrStolika" min="0" step="1" ref={tableNumber}/>
+                    <label htmlFor="tableNumber">Numer stolika: </label>
+                    <input type="number" id="tableNumber" min="0" step="1" ref={tableNumber} required/>
                 </div>
                 <div className="inputField">
-                    <label htmlFor="iloscMiejsc">Ilość miejsc przy stoliku:</label>
-                    <input type="number" id="iloscMiejsc" min="1" step="1" ref={tableSeats}/>
+                    <label htmlFor="seatsAmount">Ilość miejsc przy stoliku: </label>
+                    <input type="number" id="seatsAmount" min="1" step="1" ref={tableSeats} required/>
                 </div>
                 <div className="inputField">
                     <input type="submit" value="Dodaj stolik"/>
