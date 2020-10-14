@@ -7,6 +7,7 @@ const AddTable = () => {
     const [addTable, { data }] = useMutation(addTableMutation);
     const tableNumber = useRef(null);
     const tableSeats = useRef(null);
+    const message = useRef(null);
     
     
     const submitTable = (e) => {
@@ -19,8 +20,12 @@ const AddTable = () => {
             reserved: tableReserved
         }});
 
-        console.log(tableNumber.current.valueAsNumber);
-        console.log(tableSeats.current.valueAsNumber);
+        //Reset form fields
+        tableNumber.current.value = "";
+        tableSeats.current.value = "";
+
+        //Add message
+        message.current.innerHTML = `<p>Pomyślnie dodano nową rezerwację!</p>`
     }
     return(
         <section className="wrapper">
@@ -35,6 +40,9 @@ const AddTable = () => {
                 </div>
                 <div className="inputField">
                     <input type="submit" value="Dodaj stolik"/>
+                </div>
+                <div className="message" ref={message}>
+
                 </div>
             </form>
         </section>

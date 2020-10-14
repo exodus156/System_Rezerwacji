@@ -76,8 +76,8 @@ export const getReservationsQuery = gql`
 `
 
 export const addReservationMutation = gql`
-    mutation AddReservation($number: Int!, $date: String!, $timeStart: Int!, $timeEnd: Int!, $people: Int!, $tableid: String!){
-        addReservation(number: $number, date: $date, timeStart: $timeStart, timeEnd: $timeEnd, people: $people, tableId: $tableid){
+    mutation AddReservation($number: Int!, $date: String!, $timeStart: Int!, $timeEnd: Int!, $people: Int!, $tableId: String!){
+        addReservation(number: $number, date: $date, timeStart: $timeStart, timeEnd: $timeEnd, people: $people, tableId: $tableId){
             id
         }
     }
