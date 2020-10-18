@@ -7,11 +7,18 @@ import Home from './components/HomePage';
 import AddReservation from './components/ReservationPage';
 import AddTable from './components/TablePage';
 import TablePage from './components/SingleTablePage';
-import ReservationPage from './components/SingleReservationPage'
+import ReservationPage from './components/SingleReservationPage';
+import TableListPage from './components/TableListPage';
+import ReservationListPage from './components/ReservationListPage';
 
 const client = new ApolloClient({
     uri: 'http://localhost:4000/graphql', //Change later for live version
-     cache: new InMemoryCache( ),
+    cache: new InMemoryCache( ),
+    defaultOptions: {
+      watchQuery: {
+        fetchPolicy: 'cache-and-network',
+      },
+    },
 });
 
 function App() {
@@ -26,6 +33,8 @@ function App() {
           <Route path="/addtable" component={AddTable} />
           <Route path="/table/:table_id" component={TablePage} />
           <Route path="/reservation/:reservation_id" component={ReservationPage} />
+          <Route path="/tablelist" component={TableListPage} />
+          <Route path="/reservationlist" component={ReservationListPage} />
         </div>
       </BrowserRouter>
     </ApolloProvider>

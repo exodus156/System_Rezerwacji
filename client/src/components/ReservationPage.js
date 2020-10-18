@@ -21,7 +21,7 @@ const AddReservation = () => {
         date.setDate(date.getDate() + 1);
         const minDate = date.toISOString().slice(0, 10);
         selectedDate.current.min = minDate;
-    })
+    }, [])
 
     const checkTables = () => {
         //Reset messages

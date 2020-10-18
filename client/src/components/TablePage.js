@@ -25,7 +25,7 @@ const AddTable = () => {
         tableSeats.current.value = "";
 
         //Add message
-        message.current.innerHTML = `<p>Pomyślnie dodano nową rezerwację!</p>`
+        message.current.innerHTML = `<p>Pomyślnie dodano nowy stolik!</p>`
     }
     return(
         <section className="wrapper">
