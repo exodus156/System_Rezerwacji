@@ -2,11 +2,12 @@ import { gql } from 'apollo-boost';
 
 /* Zapytania i mutacje dla stolików */
 export const getTableQuery = gql`
-    query GetTable($id: String!){
+    query GetTable($id: ID!){
         table(id: $id){
             number
             seats
             reservations{
+                id
                 number
                 date
                 timeStart
@@ -45,7 +46,7 @@ export const removeTableMutation = gql`
 
 /* Zapytania i mutacje dla rezerwacji */
 export const getReservationQuery = gql`
-    query GetReservation($id: String!){
+    query GetReservation($id: ID!){
         reservation(id: $id){
             number
             date
@@ -53,6 +54,7 @@ export const getReservationQuery = gql`
             timeEnd
             people
             table{
+                id
                 number
                 seats
             }

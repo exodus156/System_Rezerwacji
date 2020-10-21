@@ -4,7 +4,7 @@ import { addTableMutation } from '../queries'
 
 
 const AddTable = () => {
-    const [addTable, { data }] = useMutation(addTableMutation);
+    const [addTable] = useMutation(addTableMutation);
     const tableNumber = useRef(null);
     const tableSeats = useRef(null);
     const message = useRef(null);

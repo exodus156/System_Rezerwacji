@@ -4,9 +4,9 @@ import { addReservationMutation, getReservationsQuery, getTablesQuery } from '..
 
 const AddReservation = () => {
     //Hooks for query and mutations
-    const [addReservation, { data }] = useMutation(addReservationMutation);
-    const {data: dataT, error: errorT, loading: loadingT} = useQuery(getTablesQuery);
-    const {data: dataR, error: errorR, loading: loadingR} = useQuery(getReservationsQuery);
+    const [addReservation] = useMutation(addReservationMutation);
+    const {data: dataT} = useQuery(getTablesQuery);
+    const {data: dataR} = useQuery(getReservationsQuery);
 
     //use reference hooks
     const selectedDate = useRef(null);

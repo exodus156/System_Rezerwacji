@@ -16,8 +16,12 @@ const ReservationList = () => {
         }
         else{
             const reservations = data.reservations;
-            const sortedReservations = reservations.slice().sort((a, b) => {return a.number - b.number}); //.slice() to unfreeze locked array, so .sort can work on it
-            return sortedReservations.map(reservation => <li key={reservation.id}><Link to={'/reservation/' + reservation.id}>Rezerwacja numer {reservation.number}</Link></li>)
+            if(reservations.length !== 0){
+                const sortedReservations = reservations.slice().sort((a, b) => {return a.number - b.number}); //.slice() to unfreeze locked array, so .sort can work on it
+                return sortedReservations.map(reservation => <li key={reservation.id}><Link to={'/reservation/' + reservation.id}>Rezerwacja numer {reservation.number}</Link></li>)
+            } else{
+                return <li>Brak rezerwacji w bazie danych!</li>
+            }
         }
         
     }

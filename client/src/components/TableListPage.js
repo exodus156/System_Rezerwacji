@@ -16,8 +16,12 @@ const TableList = () => {
         } 
         else {
             const tables = data.tables;
-            const sortedTables = tables.slice().sort((a, b) => {return a.number - b.number}); //.slice() to unfreeze locked array, so .sort can work on it
-            return sortedTables.map(table => <li key={table.id}><Link to={'/table/' + table.id}>Stolik numer {table.number} </Link></li>);
+            if(tables.length !== 0){
+                const sortedTables = tables.slice().sort((a, b) => {return a.number - b.number}); //.slice() to unfreeze locked array, so .sort can work on it
+                return sortedTables.map(table => <li key={table.id}><Link to={'/table/' + table.id}>Stolik numer {table.number} </Link></li>);
+            } else{
+                return <li>Brak stolików w bazie danych!</li>
+            }
         }
     }
 
