@@ -1,0 +1,44 @@
+.mobileNav {
+    display: none;
+}
+
+.hamburger {
+    display: none;
+}
+@media only screen and (max-width: 768px) {
+    .normalNav {
+        display: none;
+    }
+    
+    .mobileNav {
+      display:block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 300px;
+      overflow: hidden;
+      transform: translateY(-100%);
+      background: rgb(97, 97, 97);
+      color: white;
+      transition: transform 0.2s ease;
+    }
+
+    .hamburger {
+        display: block;
+        position: absolute;
+        z-index: 20;
+        top: 20px;
+        right: 20px;
+        width: 36px;
+        height: 36px;
+        border: none;
+        cursor: pointer;
+        background-color: transparent;
+        background-size: 100%;
+    }
+}
+
+.showNav {
+    transform: translateY(0);
+}
