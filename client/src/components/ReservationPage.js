@@ -122,7 +122,7 @@ const AddReservation = () => {
         message.current.innerHTML = `<p>Pomyślnie dodano nową rezerwację!</p>`
     }
     return(
-        <section className="wrapper">
+        <section className="container px-8">
             <form onSubmit={submitReservation}>
                 <div className="inputField">
                     <label htmlFor="dateSelection">Data rezerwacji: </label>

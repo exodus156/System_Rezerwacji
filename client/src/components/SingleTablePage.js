@@ -56,7 +56,7 @@ const TablePage = (props) => {
     }
 
     return(
-        <section className="wrapper">
+        <section className="container px-8">
             <div className="tableDetails">
                 <p>Szczegółowe informacje:</p>
                 {displayDetails()}

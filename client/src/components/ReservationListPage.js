@@ -27,7 +27,7 @@ const ReservationList = () => {
     }
 
     return(
-        <section className="wrapper">
+        <section className="container px-8">
             <header className="title"><p>Lista wszystkich dostępnych rezerwacji:</p></header>
             <button className="refresh" onClick={() => refetch()}>Odśwież</button>
             <ul>

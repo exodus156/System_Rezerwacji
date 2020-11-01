@@ -37,7 +37,7 @@ const ReservationPage = (props) => {
     }
     
     return(
-        <section className="wrapper">
+        <section className="container px-8">
             <div className="reservationDetails">
                 <p>Szczegółowe informacje:</p>
                 {displayDetails()}

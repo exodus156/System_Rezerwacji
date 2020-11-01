@@ -3,7 +3,7 @@ import React from 'react';
 
 const Home = () => {
     return(
-        <section className="wrapper">
+        <section className="container px-8">
             <div className="description">
                 <p>Text here</p>
             </div>

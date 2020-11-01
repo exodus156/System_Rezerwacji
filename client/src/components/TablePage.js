@@ -28,7 +28,7 @@ const AddTable = () => {
         message.current.innerHTML = `<p>Pomyślnie dodano nowy stolik!</p>`
     }
     return(
-        <section className="wrapper">
+        <section className="container px-8">
             <form onSubmit={submitTable}>
                 <div className="inputField">
                     <label htmlFor="tableNumber">Numer stolika: </label>

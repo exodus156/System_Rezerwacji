@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
+import titleImage from '../images/title_image.jpg'
 
 class Title extends Component {
     render(){
         return(
-            <div className="title">
-                <h1>System Rezerwacji</h1>
+            <div className="relative flex w-full h-32 items-center justify-center overflow-hidden">
+                <h2 className="absolute flex">System Rezerwacji</h2>
+                <img src={titleImage} className="opacity-50"/>
             </div>
         )
     }

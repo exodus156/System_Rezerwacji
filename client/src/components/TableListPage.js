@@ -26,7 +26,7 @@ const TableList = () => {
     }
 
     return(
-        <section className="wrapper">
+        <section className="container px-8">
             <header className="title"><p>Lista wszystkich dostępnych stolików:</p></header>
             <button className="refresh" onClick={() => refetch()}>Odśwież</button>
             <ul>
