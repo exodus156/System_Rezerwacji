@@ -10,6 +10,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #fffaf0;
   overflow: hidden;
 }
 
@@ -32,7 +33,8 @@ code {
     }
     
     .mobileNav {
-      display:block;
+      display: flex;
+      flex-direction: column;
       position: absolute;
       top: 0;
       left: 0;
@@ -41,7 +43,7 @@ code {
       overflow: hidden;
       margin: 0;
       transform: translateY(-200%);
-      background: rgb(97, 97, 97);
+      background-color: #5e2222;		
       color: white;
       transition: transform 0.2s ease;
     }

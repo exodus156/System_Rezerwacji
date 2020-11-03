@@ -44,12 +44,12 @@ class Navbar extends Component {
                 </ul>
                 <button className="hamburger" onClick={this.hamburgerTrigger}><i className="fas fa-bars" ref={this.bars}></i><i className="fas fa-times" style={{color: "white"}} ref={this.close}></i></button>
                 <section>
-                    <ul className="mobileNav" ref={this.mobileNavbar}>
-                        <li><NavLink to='/' onClick={this.hamburgerTrigger}>Strona główna</NavLink></li>
-                        <li><NavLink to='/tablelist' onClick={this.hamburgerTrigger}>Lista stolików</NavLink></li>
-                        <li><NavLink to='/reservationlist' onClick={this.hamburgerTrigger}>Lista rezerwacji</NavLink></li>
-                        <li><NavLink to='/addtable' onClick={this.hamburgerTrigger}>Dodaj stolik</NavLink></li>
-                        <li><NavLink to='/addreservation' onClick={this.hamburgerTrigger}>Dodaj rezerwację</NavLink></li>
+                    <ul className="mobileNav justify-center items-center" ref={this.mobileNavbar}>
+                        <li className="py-3 flex"><NavLink to='/' onClick={this.hamburgerTrigger}>Strona główna</NavLink></li>
+                        <li className="py-3 flex"><NavLink to='/tablelist' onClick={this.hamburgerTrigger}>Lista stolików</NavLink></li>
+                        <li className="py-3 flex"><NavLink to='/reservationlist' onClick={this.hamburgerTrigger}>Lista rezerwacji</NavLink></li>
+                        <li className="py-3 flex"><NavLink to='/addtable' onClick={this.hamburgerTrigger}>Dodaj stolik</NavLink></li>
+                        <li className="py-3 flex"><NavLink to='/addreservation' onClick={this.hamburgerTrigger}>Dodaj rezerwację</NavLink></li>
                     </ul>
                 </section>
             </nav>

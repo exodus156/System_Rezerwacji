@@ -3,16 +3,11 @@ import React from 'react';
 
 const Home = () => {
     return(
-        <section className="container px-8">
-            <div className="description">
-                <p>Text here</p>
-            </div>
-            <div className="list">
-                <button type="button">Lista stolików</button>
-                <button type="button">Lista rezerwacji</button>
-                <ul>
-
-                </ul>
+        <section className="p-8">
+            <div className="container bg-white text-center shadow">
+                <div className="description p-4">
+                    <p>Text here</p>
+                </div>
             </div>
         </section>
     )
