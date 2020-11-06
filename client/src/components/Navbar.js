@@ -35,21 +35,21 @@ class Navbar extends Component {
     render(){
         return(
             <nav className="navbar" ref={this.navbar}>
-                <ul className="normalNav">
-                    <li><NavLink to='/'>Strona główna</NavLink></li>
-                    <li><NavLink to='/tablelist'>Lista stolików</NavLink></li>
-                    <li><NavLink to='/reservationlist'>Lista rezerwacji</NavLink></li>
-                    <li><NavLink to='/addtable'>Dodaj stolik</NavLink></li>
-                    <li><NavLink to='/addreservation'>Dodaj rezerwację</NavLink></li>
+                <ul className="normalNav flex flex-row bg-green-600 justify-around py-3">
+                    <li className="normalElement"><NavLink exact to='/'>Strona główna</NavLink></li>
+                    <li className="normalElement"><NavLink to='/tablelist'>Lista stolików</NavLink></li>
+                    <li className="normalElement"><NavLink to='/reservationlist'>Lista rezerwacji</NavLink></li>
+                    <li className="normalElement"><NavLink to='/addtable'>Dodaj stolik</NavLink></li>
+                    <li className="normalElement"><NavLink to='/addreservation'>Dodaj rezerwację</NavLink></li>
                 </ul>
                 <button className="hamburger" onClick={this.hamburgerTrigger}><i className="fas fa-bars" ref={this.bars}></i><i className="fas fa-times" style={{color: "white"}} ref={this.close}></i></button>
                 <section>
                     <ul className="mobileNav justify-center items-center" ref={this.mobileNavbar}>
-                        <li className="py-3 flex"><NavLink to='/' onClick={this.hamburgerTrigger}>Strona główna</NavLink></li>
-                        <li className="py-3 flex"><NavLink to='/tablelist' onClick={this.hamburgerTrigger}>Lista stolików</NavLink></li>
-                        <li className="py-3 flex"><NavLink to='/reservationlist' onClick={this.hamburgerTrigger}>Lista rezerwacji</NavLink></li>
-                        <li className="py-3 flex"><NavLink to='/addtable' onClick={this.hamburgerTrigger}>Dodaj stolik</NavLink></li>
-                        <li className="py-3 flex"><NavLink to='/addreservation' onClick={this.hamburgerTrigger}>Dodaj rezerwację</NavLink></li>
+                        <li className="flex mobileElement"><NavLink className="p-3" exact to='/' onClick={this.hamburgerTrigger}>Strona główna</NavLink></li>
+                        <li className="flex mobileElement"><NavLink className="p-3" to='/tablelist' onClick={this.hamburgerTrigger}>Lista stolików</NavLink></li>
+                        <li className="flex mobileElement"><NavLink className="p-3" to='/reservationlist' onClick={this.hamburgerTrigger}>Lista rezerwacji</NavLink></li>
+                        <li className="flex mobileElement"><NavLink className="p-3" to='/addtable' onClick={this.hamburgerTrigger}>Dodaj stolik</NavLink></li>
+                        <li className="flex mobileElement"><NavLink className="p-3" to='/addreservation' onClick={this.hamburgerTrigger}>Dodaj rezerwację</NavLink></li>
                     </ul>
                 </section>
             </nav>

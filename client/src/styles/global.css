@@ -9,14 +9,23 @@ body {
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: #fffaf0;
-  overflow: hidden;
+  -moz-osx-font-smoothing: grayscale;		
+  overflow-y: scroll;
+  background-image: url('../images/background_image.jpg');
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.bgColor {
+  background-color: rgba(121, 210, 164, 0.96);
+  max-width: 400px;
 }
 
 /* Navbar */
@@ -26,6 +35,19 @@ code {
 
 .hamburger {
     display: none;
+}
+
+.normalNav {
+  background-color: rgba(64, 191, 125, 0.96);
+}
+li.normalElement > a.active {
+  color: white;
+}
+li.mobileElement > a.active {
+  border-width: 2px;
+  border-radius: 25px;
+  border-style: solid;
+  border-color: white;
 }
 @media only screen and (max-width: 768px) {
     .normalNav {
@@ -43,7 +65,7 @@ code {
       overflow: hidden;
       margin: 0;
       transform: translateY(-200%);
-      background-color: #5e2222;		
+      background-color: #234e52;				
       color: white;
       transition: transform 0.2s ease;
     }

@@ -119,42 +119,50 @@ const AddReservation = () => {
         insertDiv.current.children[0].children[1].innerHTML = ''
 
         //Add message
-        message.current.innerHTML = `<p>Pomyślnie dodano nową rezerwację!</p>`
+        message.current.innerHTML = `<p class="font-semibold">Pomyślnie dodano nową rezerwację!</p>`
     }
     return(
-        <section className="container px-8">
-            <form onSubmit={submitReservation}>
-                <div className="inputField">
-                    <label htmlFor="dateSelection">Data rezerwacji: </label>
-                    <input type="date" id="dateSelection" required ref={selectedDate}/>
-                    <span></span>
-                </div>
-                <div className="inputField">
-                    <label htmlFor="reservationTime">Godzina rezerwacji: </label>
-                    <input type="time" id="reservationTime" min="08:00:00" max="21:00:00" required ref={selectedTime}/>
-                    <span></span>
-                </div>
-                <div className="inputField">
-                    <label htmlFor="numberOfPeople">Ilość osób: </label>
-                    <input type="number" min="1" step="1" id="numberOfPeople" required ref={peopleNumber}/>
-                    <span></span>
-                </div>
-                <button id="buttonCheck" type="button" onClick={checkTables}>Sprawdź dostępne stoliki</button>
-                <div className="insert" ref={insertDiv} hidden>
+        <section className="p-8 h-screen flex justify-center items-start">
+            <div className="container text-center shadow bgColor py-4 align-middle">
+                <form onSubmit={submitReservation}>
                     <div className="inputField">
-                        <label>Wybierz dostępny stolik: </label>
-                        <select required>
-
-                        </select>
+                        <label className="block text-sm font-bold mb-2" htmlFor="dateSelection">Data rezerwacji: </label>
+                        <input className="shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="date" id="dateSelection" required ref={selectedDate}/>
+                        <p className="font-semibold mt-4 px-4"></p>
                     </div>
                     <div className="inputField">
-                        <input type="submit" value="Prześlij rezerwację"/>
+                        <label className="block text-sm font-bold mb-2 mt-4" htmlFor="reservationTime">Godzina rezerwacji: </label>
+                        <input className="shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="time" id="reservationTime" min="08:00:00" max="21:00:00" required ref={selectedTime}/>
+                        <p className="font-semibold mt-4 px-4"></p>
                     </div>
-                </div>
-                <div className="message" ref={message}>
-
-                </div>
-            </form>
+                    <div className="inputField">
+                        <label className="block text-sm font-bold mb-2 mt-4" htmlFor="numberOfPeople">Ilość osób: </label>
+                        <input className="shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="number" min="1" step="1" id="numberOfPeople" required ref={peopleNumber}/>
+                        <p className="font-semibold mt-4 px-4"></p>
+                    </div>
+                    <button id="buttonCheck" className="bg-green-600 hover:bg-green-700 text-gray-300 font-bold py-2 px-4 rounded inline-flex items-center mt-4" type="button" onClick={checkTables}>
+                        <i className="fas fa-search fill-current w-4 h-4 mr-2 text-gray-300"></i>
+                        <span>Sprawdź dostępne stoliki</span>
+                    </button>
+                    <div className="insert" ref={insertDiv} hidden>
+                        <div className="inputField relative">
+                            <label className="block text-sm font-bold mb-2 mt-4">Wybierz dostępny stolik: </label>
+                            <select className="bg-gray-200 border border-gray-200 text-gray-700 pl-2 py-2 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" required>
+        
+                            </select>
+                        </div>
+                        <div className="inputField">
+                            <button type="submit" className="bg-green-600 hover:bg-green-700 text-gray-300 font-bold py-2 px-4 rounded inline-flex items-center mt-4">
+                                <i className="fas fa-plus fill-current w-4 h-4 mr-2 text-gray-300"></i>
+                                <span>Prześlij rezerwację</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div className="message" ref={message}>
+        
+                    </div>
+                </form>
+            </div>
         </section>
     )
 }

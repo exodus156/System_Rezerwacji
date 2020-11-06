@@ -20,12 +20,12 @@ const ReservationPage = (props) => {
             const timeEnd = data.reservation.timeEnd.toString().slice(0, 2) + ':' + data.reservation.timeEnd.toString().slice(2, 4)
             return(
                 <ul>
-                    <li>Numer rezerwacji: {data.reservation.number}</li>
-                    <li>Ilość osób: {data.reservation.people}</li>
-                    <li>Data rezerwacji: {data.reservation.date}</li>
-                    <li>Godzina rozpoczęcia rezerwacji: {timeStart}</li>
-                    <li>Godzina zakończenia rezerwacji: {timeEnd}</li>
-                    <li><Link to={'/table/' + data.reservation.table.id}>Numer stolika powiązanego z rezerwacją: {data.reservation.table.number}</Link></li>
+                    <li className="mb-2 py-2">Numer rezerwacji: <span className="font-semibold">{data.reservation.number}</span></li>
+                    <li className="mb-2 py-2">Ilość osób: <span className="font-semibold">{data.reservation.people}</span></li>
+                    <li className="mb-2 py-2">Data rezerwacji: <span className="font-semibold">{data.reservation.date}</span></li>
+                    <li className="mb-2 py-2">Godzina rozpoczęcia rezerwacji: <span className="font-semibold">{timeStart}</span></li>
+                    <li className="mb-2 py-2">Godzina zakończenia rezerwacji: <span className="font-semibold">{timeEnd}</span></li>
+                    <li className="mb-2 py-2 hover:bg-green-500"><Link to={'/table/' + data.reservation.table.id}>Numer stolika powiązanego z rezerwacją: <span className="font-semibold">{data.reservation.table.number}</span></Link></li>
                 </ul>
             )
         }
@@ -37,12 +37,17 @@ const ReservationPage = (props) => {
     }
     
     return(
-        <section className="container px-8">
-            <div className="reservationDetails">
-                <p>Szczegółowe informacje:</p>
-                {displayDetails()}
+        <section className="p-8 h-screen flex justify-center items-start">
+            <div className="container text-center shadow bgColor py-4 align-middle">
+                <div className="reservationDetails">
+                    <p className="text-lg font-semibold">Szczegółowe informacje:</p>
+                    {displayDetails()}
+                </div>
+                <button type="button" className="bg-green-600 hover:bg-red-700 text-gray-300 font-bold py-2 px-4 rounded inline-flex items-center my-2" onClick={deleteDisplayedReservation}>
+                    <i className="fas fa-times fill-current w-4 h-4 mr-2 text-gray-300"></i>
+                    <span>Usuń rezerwację</span>
+                </button>
             </div>
-            <button type="button" onClick={deleteDisplayedReservation}>Usuń rezerwację</button>
         </section>
     )
 }
