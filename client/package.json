@@ -1,0 +1,48 @@
+{
+  "name": "client",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.5.0",
+    "@testing-library/user-event": "^7.2.1",
+    "react-dom": "^16.13.1",
+    "react-scripts": "^3.4.4"
+  },
+  "scripts": {
+    "start": "npm run watch:css && react-scripts start",
+    "build": "npm run build:css && react-scripts build",
+    "test": "jest",
+    "eject": "react-scripts eject",
+    "build:css": "postcss src/styles/global.css -o src/styles/main.css",
+    "watch:css": "postcss src/styles/global.css -o src/styles/main.css"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@apollo/client": "^3.2.2",
+    "@apollo/react-hooks": "^4.0.0",
+    "apollo-boost": "^0.4.9",
+    "apollo-link-error": "^1.1.13",
+    "autoprefixer": "^9.8.6",
+    "graphql": "^15.3.0",
+    "postcss-cli": "^8.1.0",
+    "react": "^16.13.1",
+    "react-apollo": "^3.1.5",
+    "react-router-dom": "^5.2.0",
+    "tailwindcss": "^1.9.6"
+  }
+}
