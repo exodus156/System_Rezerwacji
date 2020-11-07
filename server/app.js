@@ -20,7 +20,6 @@ mongoose.connection.once('open', () => {
 
 app.use('/graphql', graphqlHTTP({
     schema,
-    graphiql: true //for testing connection, will remove later
 })); //Binding GraphQL with Express
 
 app.listen(4000, () =>{
